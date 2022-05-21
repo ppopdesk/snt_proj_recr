@@ -23,13 +23,13 @@ Subsequently answer all questions and answer in proper format i.e. :
     full name format : "XXX.. YYY.." (name and surname seperated by space)
     Enter one of the available scheme types (displayed in the start) when asked for scheme types 
 
-We can access interest rate, total amount to be paid and other features through some other changes in the UI
+** We can access interest rate, total amount to be paid, emi and other features through some other changes in the UI. It is available as class method but not implemented in UI. **
 
 Note : We have to add data so as to search as of now there are no data available in borrowers or costumers
 
 
 Part 2 of the test answer : 
 
-The loaning system created is a centralized system as the bank authorities are responsible in holding costumers funds and carrying out transactions from their part. Intermediaries have access to costumer data and have the authority to manipulate them.
+The loaning system created is a centralized system as the bank authorities are responsible in handling customers funds and carrying out transactions from their part. Intermediaries have access to costumer data and have the authority to manipulate them. 
 
-Disadvantage of this type of a system is that the banking authorities work under the hood. They can misuse the authority they posses to their advantage as long as the costumer side of things runs smoothly. Also we must place our trust on a single entity which may or may not be very practical
+Disadvantage of this type of a system is that the banking authorities work under the hood. They can misuse the authority they posses to their advantage as long as the costumer side of things runs smoothly. Also we must place our trust on a single entity which may or may not be very practical. The data is stored in a single system in a single server and is thus a single point of failure
