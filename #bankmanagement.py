@@ -148,35 +148,37 @@ print_all_details(BorrowerSchemes.Borrower_Schemes)
 
 bs1 = Borrower("Vijaya Anand",123123,13143134,"Consumer Loan",341241,3)
 
-action = input("Search or Add costumer? ")
-
-if action == 'Add':
-    name = input("Enter full name : ")
-    id_numb = int(input("Enter ID number : "))
-    total_wealth = int(input("Enter wealth amount : "))
-    l_or_b = input("Lender or Borrower? : ")
-    if l_or_b == 'Lender':
-        scheme_type = input("Enter scheme type : ")
-        amount_deposited_or_loaned = int(input("Enter pricipal amount : "))
-        scheme_duration = int(input("Enter term duration : "))
-        Lender(name,id_numb,total_wealth,scheme_type,amount_deposited_or_loaned,scheme_duration)
-    else:
-        scheme_type = input("Enter scheme type : ")
-        amount_deposited_or_loaned = int(input("Enter loan amount : "))
-        scheme_duration = int(input("Enter term duration : "))
-        Borrower(name,id_numb,total_wealth,scheme_type,amount_deposited_or_loaned,scheme_duration)
-else:
-    full_name_ = input("Enter full name of person you want records of : ")
-    l_or_b = input("Lender or Borrower : ")
-    if l_or_b == 'Lender':
-        obj = Lender.search(full_name_)
-        if obj:
-            obj.print_all_details()
+while True:
+    action = input("Search or Add costumer? (Enter 1 to exit) ")
+    if action == 'Add':
+        name = input("Enter full name : ")
+        id_numb = int(input("Enter ID number : "))
+        total_wealth = int(input("Enter wealth amount : "))
+        l_or_b = input("Lender or Borrower? : ")
+        if l_or_b == 'Lender':
+            scheme_type = input("Enter scheme type : ")
+            amount_deposited_or_loaned = int(input("Enter pricipal amount : "))
+            scheme_duration = int(input("Enter term duration : "))
+            Lender(name,id_numb,total_wealth,scheme_type,amount_deposited_or_loaned,scheme_duration)
         else:
-            print("Costumer not found")
-    else:
-        obj = Borrower.search(full_name_)
-        if obj:
-            obj.print_all_details()
+            scheme_type = input("Enter scheme type : ")
+            amount_deposited_or_loaned = int(input("Enter loan amount : "))
+            scheme_duration = int(input("Enter term duration : "))
+            Borrower(name,id_numb,total_wealth,scheme_type,amount_deposited_or_loaned,scheme_duration)
+    elif action == 'Search':
+        full_name_ = input("Enter full name of person you want records of : ")
+        l_or_b = input("Lender or Borrower : ")
+        if l_or_b == 'Lender':
+            obj = Lender.search(full_name_)
+            if obj:
+                obj.print_all_details()
+            else:
+                print("Costumer not found")
         else:
-            print("Costumer not found")
+            obj = Borrower.search(full_name_)
+            if obj:
+                obj.print_all_details()
+            else:
+                print("Costumer not found")
+    else:
+        break
