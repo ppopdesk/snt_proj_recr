@@ -52,7 +52,7 @@ class LenderSchemes(Schemes):
     @staticmethod
     def interest_calc_fixed_deposit(scheme_type_,term_of_fd,principal_amount_):
         #we actually need to calculate interest using some interest calculating algorithm but it is just randomized here
-        return random.randint(principal_amount_/100,principal_amount_/50)
+        return random.randint(principal_amount_//100,principal_amount_//50)
 
 class BorrowerSchemes(Schemes):
     Borrower_Schemes = [] #all borrower schemes are stored in this list (to be added by user)
@@ -62,7 +62,7 @@ class BorrowerSchemes(Schemes):
     @staticmethod
     def emi_calc_loan(scheme_type_,term_of_loan,principal_amount_):
         #we actually need to calculate emi using some emi calculating algorithm but it is just randomized here
-        return random.randint(principal_amount_/100,principal_amount_/50)
+        return random.randint(principal_amount_//100,principal_amount_//50)
 
 class Borrower(PersonalInfo):
     borrowers_list = [] #all Borrower objects stored in this list
@@ -146,8 +146,6 @@ print("Schemes provided by Bank: ")
 print_all_details(LenderSchemes.Lender_Schemes)
 print_all_details(BorrowerSchemes.Borrower_Schemes)
 
-bs1 = Borrower("Vijaya Anand",123123,13143134,"Consumer Loan",341241,3)
-
 while True:
     action = input("Search or Add costumer? (Enter 1 to exit) ")
     if action == 'Add':
@@ -172,12 +170,14 @@ while True:
             obj = Lender.search(full_name_)
             if obj:
                 obj.print_all_details()
+                print("Monthly Interest : " + str(obj.monthly_interest()))
             else:
                 print("Costumer not found")
         else:
             obj = Borrower.search(full_name_)
             if obj:
                 obj.print_all_details()
+                print("EMI : " + str(obj.emi()))
             else:
                 print("Costumer not found")
     else:

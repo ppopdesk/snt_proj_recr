@@ -23,8 +23,6 @@ Subsequently answer all questions and answer in proper format i.e. :
     full name format : "XXX.. YYY.." (name and surname seperated by space)
     Enter one of the available scheme types (displayed in the start) when asked for scheme types 
 
-** We can access interest rate, total amount to be paid, emi and other features through some other changes in the UI. It is available as class method but not implemented in UI. **
-
 Note : We have to add data so as to search as of now there are no data available in borrowers or costumers
 
 
