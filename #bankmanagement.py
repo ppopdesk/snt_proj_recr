@@ -146,6 +146,9 @@ print("Schemes provided by Bank: ")
 print_all_details(LenderSchemes.Lender_Schemes)
 print_all_details(BorrowerSchemes.Borrower_Schemes)
 
+bs1 = Borrower("Vijaya Anand",123123,13143134,"Consumer Loan",341241,3)
+
+
 while True:
     action = input("Search or Add costumer? (Enter 1 to exit) ")
     if action == 'Add':
